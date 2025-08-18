@@ -17,11 +17,11 @@ A 2D top-down shooter game built with Unity. The project focuses on core gamepla
 - Audio Integration: Integrated custom sound effects and distinct background music for different game stages and events.
 
 🛠️ Technology Stack
-Game Engine: Unity
+- Game Engine: Unity
 
-Language: C#
+- Language: C#
 
-IDE: Visual Studio
+- IDE: Visual Studio
 
 🚀 How to Run the Project
 - Clone this repository to your local machine using git clone.

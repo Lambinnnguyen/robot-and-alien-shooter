@@ -110,10 +110,8 @@ public class GameManager : MonoBehaviour
         gameOverMenu.SetActive(false);
         pauseMenu.SetActive(false);
         winMenu.SetActive(true);
-
         Debug.Log("Trạng thái active của winMenu là: " + winMenu.activeSelf);
         Debug.Log("Trạng thái active trong Hierarchy của winMenu là: " + winMenu.activeInHierarchy);
-
         Time.timeScale = 0f;
     }
 }

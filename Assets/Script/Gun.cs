@@ -61,14 +61,12 @@ public class Gun : MonoBehaviour
 
     void Reload()
     {
-        if (Input.GetMouseButtonDown(1) && currentAmmo < maxAmmo )
+        if (InputManager.Instance != null && InputManager.Instance.GetReloadInput() && currentAmmo < maxAmmo)
         {
             currentAmmo = maxAmmo;
             UpdateAmmoText();
             audioManager.PlayReloadSound();
         }
-        
-
     }
 
     private void UpdateAmmoText()

@@ -15,6 +15,21 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private GameObject winMenu;
+    [SerializeField] private GameObject Down;
+    [SerializeField] private GameObject Left;
+    [SerializeField] private GameObject Right;
+    [SerializeField] private GameObject Up;
+    [SerializeField] private GameObject Pause;
+    [SerializeField] private GameObject Reload;
+    [SerializeField] private InputManager inputManager;
+
+    private void Awake()
+    {
+        if (inputManager == null)
+        {
+            inputManager = InputManager.Instance;
+        }
+    }
 
     void Start()
     {
@@ -60,9 +75,15 @@ public class GameManager : MonoBehaviour
     public void MainMenu()
     {
         mainMenu.SetActive(true);
-        gameOverMenu .SetActive(false);
+        gameOverMenu.SetActive(false);
         pauseMenu.SetActive(false);
         winMenu.SetActive(false);
+        Down.SetActive(false);
+        Left.SetActive(false);
+        Right.SetActive(false);
+        Up.SetActive(false);
+        Pause.SetActive(false);
+        Reload.SetActive(false);
         Time.timeScale = 0f;
     }
 
@@ -71,6 +92,12 @@ public class GameManager : MonoBehaviour
         mainMenu.SetActive(false);
         gameOverMenu.SetActive(true);
         pauseMenu.SetActive(false);
+        Down.SetActive(false);
+        Left.SetActive(false);
+        Right.SetActive(false);
+        Up.SetActive(false);
+        Pause.SetActive(false);
+        Reload.SetActive(false);
         Time.timeScale = 0f;
         winMenu.SetActive(false);
     }
@@ -81,6 +108,12 @@ public class GameManager : MonoBehaviour
         gameOverMenu.SetActive(false);
         pauseMenu.SetActive(true);
         winMenu.SetActive(false);
+        Down.SetActive(false);
+        Left.SetActive(false);
+        Right.SetActive(false);
+        Up.SetActive(false);
+        Pause.SetActive(false);
+        Reload.SetActive(false);
         Time.timeScale = 0f;
     }
 
@@ -90,6 +123,12 @@ public class GameManager : MonoBehaviour
         gameOverMenu.SetActive(false);
         pauseMenu.SetActive(false);
         winMenu.SetActive(false);
+        Down.SetActive(true);
+        Left.SetActive(true);
+        Right.SetActive(true);
+        Up.SetActive(true);
+        Pause.SetActive(true);
+        Reload.SetActive(true);
         Time.timeScale = 1f;
     }
 
@@ -99,6 +138,12 @@ public class GameManager : MonoBehaviour
         gameOverMenu.SetActive(false);
         pauseMenu.SetActive(false);
         winMenu.SetActive(false);
+        Down.SetActive(true);
+        Left.SetActive(true);
+        Right.SetActive(true);
+        Up.SetActive(true);
+        Pause.SetActive(true);
+        Reload.SetActive(true);
         Time.timeScale = 1f;
         audioManager.PlayDefaultAudio();
     }

@@ -11,11 +11,13 @@ public class Player : MonoBehaviour
     private float currentHp;
     [SerializeField] private Image hpBar;
     [SerializeField] private GameManager gameManager;
+    private InputManager inputManager;
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        inputManager = InputManager.Instance;
     }
 
     void Start()
@@ -27,7 +29,7 @@ public class Player : MonoBehaviour
     void Update()
     { 
         MovePlayer();
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (inputManager.GetPauseInput())
         {
                 gameManager.PauseMenu();
         }
@@ -35,7 +37,7 @@ public class Player : MonoBehaviour
 
     void MovePlayer()
     {
-        Vector2 playerinput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        Vector2 playerinput = inputManager.GetMovementInput();
         rb.linearVelocity = playerinput.normalized * moveSpeed;
         if (playerinput.x < 0)
         {
@@ -46,14 +48,7 @@ public class Player : MonoBehaviour
             spriteRenderer.flipX = false;
         }
 
-        if (playerinput != Vector2.zero)
-        {
-            animator.SetBool("IsRun", true);
-        }
-        else
-        {
-            animator.SetBool("IsRun", false);
-        }
+        animator.SetBool("IsRun", playerinput != Vector2.zero);
     }
 
     public void TakeDamage(float damage)

@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Enemy
+  - PlayerBullet
+  - EnemyBullet
+  - Usb
+  - Energy
+  - Explosion
   layers:
   - Default
   - TransparentFX
@@ -38,8 +44,44 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: ground
+    uniqueID: 1519751435
+    locked: 0
+  - name: grass
+    uniqueID: 4110110835
+    locked: 0
+  - name: rock
+    uniqueID: 2639371581
+    locked: 0
+  - name: trees
+    uniqueID: 3396400861
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: player
+    uniqueID: 3975368779
+    locked: 0
+  - name: playerbullet
+    uniqueID: 3047222135
+    locked: 0
+  - name: gun
+    uniqueID: 1582706675
+    locked: 0
+  - name: enemy
+    uniqueID: 623736125
+    locked: 0
+  - name: blood
+    uniqueID: 893092681
+    locked: 0
+  - name: hpbar
+    uniqueID: 3546191109
+    locked: 0
+  - name: energy
+    uniqueID: 1501721691
+    locked: 0
+  - name: gameUI
+    uniqueID: 896534025
     locked: 0
   m_RenderingLayers:
   - Default
